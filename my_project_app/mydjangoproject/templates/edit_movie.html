@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Edit Movie</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="title">Title : </label>
+        <input type="text" name="title" id="title" value="{{ movie.title }}"><br>
+        <label for="description">Description : </label>
+        <textarea name="description" id="description">{{ movie.description }}</textarea><br>
+        <label for="duration">Duration (In Minutes): </label>
+        <input type="number" name="duration" id="duration" value="{{ movie.duration }}"><br>
+        <label for="genre">Genre : </label>
+        <input type="text" name="genre" id="genre" value="{{ movie.genre }}"><br>
+        <button type="submit">Save Changes</button>
+    </form>
+</body>
+</html>
